@@ -2,6 +2,10 @@ cmake_minimum_required(VERSION 3.16)
 
 project(qt_app VERSION 0.1 LANGUAGES CXX)
 
+# Укажи toolchain для WebAssembly
+set(CMAKE_TOOLCHAIN_FILE "C:/Qt/6.10.0/wasm_singlethread/lib/cmake/Qt6/qt.toolchain.cmake" CACHE FILEPATH "Qt Toolchain")
+
+#
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick)
