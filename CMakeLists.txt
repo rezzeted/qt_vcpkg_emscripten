@@ -58,3 +58,12 @@ target_link_libraries(appqt_app
     Boost::uuid
 )
 
+# Исправление проблемы с библиотекой atomic в Emscripten
+if(EMSCRIPTEN)
+    # В Emscripten атомарные операции встроены в компилятор
+    # Удаляем ссылку на несуществующую библиотеку atomic
+    set_target_properties(Boost::uuid PROPERTIES
+        INTERFACE_LINK_LIBRARIES "Boost::assert;Boost::config;Boost::throw_exception;Boost::type_traits"
+    )
+endif()
+
