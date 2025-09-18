@@ -8,7 +8,6 @@ set EMSDK_NODE=%EMSDK%\node\22.16.0_64bit\bin\node.exe
 set PATH=%EMSDK%;%EMSCRIPTEN%;%PATH%
 
 
-set BUILD_DIR=build\WebAssembly_Qt_6_10_0_single_threaded-Debug
-set SOURCE_DIR=D:\campus\qt_vcpkg_emscripten
+set BUILD_DIR=_build_em
 
-cmake.exe --build D:/campus/qt_vcpkg_emscripten/build/WebAssembly_Qt_6_10_0_single_threaded-Debug --target all
+cmake.exe --build _build_em --target all
